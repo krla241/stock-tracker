@@ -1,0 +1,25 @@
+
+  <div class="container">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Add a stock</mat-label>
+          <input matInput placeholder="APPL" #newStock>
+        </mat-form-field>
+       </form>
+       <button mat-mini-fab color="primary" (click)="addtoList(newStock.value)"> 
+       <mat-icon aria-hidden="false" aria-label="Example home icon">add_task</mat-icon></button>
+   </div>
+
+   <div class="container">
+
+    <mat-list>
+        <mat-list-item *ngFor = "let stock of stocks "> {{stock}} </mat-list-item>
+       </mat-list>
+   </div>
+
+
+
+   
+
+
+

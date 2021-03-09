@@ -1,0 +1,9 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  p {
+    font-family: Lato;
+  }
+  .gap {
+    margin-right: 30px;
+ }
