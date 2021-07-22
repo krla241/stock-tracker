@@ -1,6 +1,9 @@
 # StockTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+This project is an easy to use online portfolio tracker. It lets the user enter a ticker symbol and adds the stock to a watch list allowing them to follow their portfolio performance on a daily, monthly and yearly basis.💎🤲 🚀🚀🚀🥮
+
+![](src/assets/Portfolio3.png)
 
 ## Development server
 
