@@ -1,5 +1,6 @@
 import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-investments',
@@ -8,17 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestmentsComponent implements OnInit {
   stocks = [];
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
  
 
   ngOnInit(): void {
   }
 
-  addtoList(newStock: string) {
+  addtoList(newStock: string, price: number, shares: number) {
     
-    console.log(newStock);
+    console.log('the stock is: ' + newStock + '@  $' + price);
     this.stocks.push(newStock);
+    this.apiService.addStock(newStock, price, shares).subscribe(
+      data => {
+        console.log(data);   
+      },
+      error => console.log(error)
+
+    );
   }
 
 }

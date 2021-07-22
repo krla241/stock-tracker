@@ -5,8 +5,16 @@
           <mat-label>Add a stock</mat-label>
           <input matInput placeholder="APPL" #newStock>
         </mat-form-field>
+        <mat-form-field class="example-full-width">
+        <mat-label>Total price paid</mat-label>
+        <input matInput placeholder="10.0" #avgPrice>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label># of shares</mat-label>
+        <input matInput placeholder="10.0" #shares>
+      </mat-form-field>
        </form>
-       <button mat-mini-fab color="primary" (click)="addtoList(newStock.value)"> 
+       <button mat-mini-fab color="primary" (click)="addtoList(newStock.value, avgPrice.value, shares.value)"> 
        <mat-icon aria-hidden="false" aria-label="Example home icon">add_task</mat-icon></button>
    </div>
 

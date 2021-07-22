@@ -5,7 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ApiService {
-  baseURL = 'http://127.0.0.1:8000/';
+  baseURL = 'http://127.0.0.1:8000/stocks';
+  postURL = 'http://127.0.0.1:8000/database'
+  dataURL = 'http://127.0.0.1:8000/apisets'
   headers = new HttpHeaders({
     'Content-Type' : 'application/json'
 
@@ -33,4 +35,22 @@ export class ApiService {
     // return this.stocks;
     return this.httpClient.get(this.baseURL, {headers: this.headers});
   }
+
+  addStock(newStock: string, price: number, noshares: number) {
+
+    let body = {
+      name: newStock,
+      price: price,
+      noshares: noshares
+    }
+
+    return this.httpClient.post(this.postURL, body, {headers: this.headers});
+  }
+
+  getfromDatabase() {
+    return this.httpClient.get(this.dataURL, {headers: this.headers})
+  }
+
+
+
 }
